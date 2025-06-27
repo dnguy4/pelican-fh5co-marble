@@ -9,12 +9,36 @@
         {% endfor %}
     {% endif %}
 
+    <!-- set types -->
+    <li class="nav-title dropdown">
+        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ _('Set Types') }}
+        </a>
+        <ul class="dropdown-menu scrollable-menu">
+            {% for card_type in card_types %}
+            <li>
+                <a class="dropdown-item" href="{{ SITEURL }}/{{card_type | lower | replace(' ', '-')}}-sets.html">{{ card_type }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </li>
+
     <!-- categories -->
     {% if DISPLAY_CATEGORIES_ON_MENU and categories|length > 0 %}
-        <li class="nav-title">{{ _('Categories') }}</li>
-        {% for cat, null in categories|sort %}
-            <li{% if cat == category %} class="fh5co-active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-        {% endfor %}
+    <li class="nav-title dropdown">
+        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ _('Categories') }}
+        </a>
+        <ul class="dropdown-menu">
+            {% for cat, null in categories|sort %}
+            {% if cat != 'Sets' %}
+            <li>
+                <a class="dropdown-item" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </li>
     {% elif categories|length > 0 %}
         <li{% if page_name == 'categories' %} class="fh5co-active"{% endif %}><a href="{{ SITEURL }}/categories.html">{{ _('Categories') }}</a></li>
     {% endif %}
