@@ -4,12 +4,11 @@ block content %}
   <h1 class="fh5co-heading-colored">
     <i class="icon-tags"></i> {{ _('Tags') }}
   </h1>
-  <div class="animate-box" data-animate-effect="fadeInLeft">
+  <div class="container">
     {% for tag, articles in tags %}
     <a
       href="{{ SITEURL }}/{{ tag.url }}"
-      class="overview-link col-md-6 animate-box"
-      data-animate-effect="fadeInLeft"
+      class="overview-link col-md-6"
     >
       <div class="wrapper">
         <div class="fh5co-feature">
