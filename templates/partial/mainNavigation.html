@@ -17,7 +17,7 @@
         <ul class="dropdown-menu scrollable-menu">
             {% for card_type in card_types %}
             <li>
-                <a class="dropdown-item" href="{{ SITEURL }}/{{card_type | lower | replace(' ', '-')}}-sets.html">{{ card_type }}</a>
+                <a class="dropdown-item" href="{{ SITEURL }}/sets/{{card_type | lower | replace(' ', '-')}}.html">{{ card_type }}</a>
             </li>
             {% endfor %}
         </ul>
@@ -30,12 +30,10 @@
             {{ _('Categories') }}
         </a>
         <ul class="dropdown-menu">
-            {% for cat, null in categories|sort %}
-            {% if cat != 'Sets' %}
+            {% for cat, cat_url in card_categories %}
             <li>
-                <a class="dropdown-item" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+                <a class="dropdown-item" href="{{ SITEURL }}/{{ cat_url }}">{{ cat }}</a>
             </li>
-            {% endif %}
             {% endfor %}
         </ul>
     </li>
