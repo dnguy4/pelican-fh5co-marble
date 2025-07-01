@@ -106,22 +106,23 @@
   <body>
     <div id="fh5co-page">
       <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-      <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
-        <nav class="fh5co-main-menu" role="navigation">
-          {% include 'partial/languages.html' %}
-        </nav>
-        <div class="clearfix"></div>
-        <h1 id="fh5co-logo">
-          <a href="{{ SITEURL }}/index.html">
-            <img src="{{ SITEURL }}/images/logo.png" />
-          </a>
-        </h1>
-        <nav class="fh5co-main-menu" role="navigation">
-          {% include 'partial/search.html' %}
-          {% include 'partial/mainNavigation.html' %}
-        </nav>
-
-        {% include 'partial/social.html' %}
+      <aside id="fh5co-aside" role="complementary" class="border js-fullheight z-1">
+        <div class="sidebar-scrollable">
+          <nav class="fh5co-main-menu" role="navigation">
+            {% include 'partial/languages.html' %}
+          </nav>
+          <div class="clearfix"></div>
+          <h1 id="fh5co-logo">
+            <a href="{{ SITEURL }}/index.html">
+              <img src="{{ SITEURL }}/images/logo.png" />
+            </a>
+          </h1>
+          <nav class="fh5co-main-menu" role="navigation">
+            {% include 'partial/search.html' %}
+            {% include 'partial/mainNavigation.html' %}
+          </nav>
+          {% include 'partial/social.html' %}
+        </div>
       </aside>
 
       <div id="fh5co-main">
@@ -146,7 +147,5 @@
 
     <!-- MAIN JS -->
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/main.js"></script>
-
-    <!-- <script src="https://files.stork-search.net/releases/v1.5.0/stork.js"></script> -->
   </body>
 </html>

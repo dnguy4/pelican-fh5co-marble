@@ -10,14 +10,14 @@
     {% endif %}
 
     <!-- set types -->
-    <li class="nav-title dropdown">
+    <li class="nav-title dropend">
         <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
             {{ _('Set Types') }}
         </a>
         <ul class="dropdown-menu scrollable-menu">
             {% for card_type in card_types %}
             <li>
-                <a class="dropdown-item" href="{{ SITEURL }}/sets/{{card_type | lower | replace(' ', '-')}}.html">{{ card_type }}</a>
+                <a class="dropdown-item" href="{{ SITEURL }}/sets/{{card_type | lower | replace(' ', '_')}}.html">{{ card_type }}</a>
             </li>
             {% endfor %}
         </ul>
@@ -25,11 +25,11 @@
 
     <!-- categories -->
     {% if DISPLAY_CATEGORIES_ON_MENU and categories|length > 0 %}
-    <li class="nav-title dropdown">
+    <li class="nav-title dropend">
         <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
             {{ _('Categories') }}
         </a>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu scrollable-menu">
             {% for cat, cat_url in card_categories %}
             <li>
                 <a class="dropdown-item" href="{{ SITEURL }}/{{ cat_url }}">{{ cat }}</a>
