@@ -117,7 +117,7 @@
         </button>
       </div>
     </nav>
-    <div id="fh5co-page">
+    <div id="fh5co-page" class="d-flex flex-column min-vh-100">
 
       <!-- Offcanvas sidebar -->
       <aside
@@ -156,10 +156,10 @@
       </aside>
 
       <!-- Main content -->
-      <div id="fh5co-main">
+      <div id="fh5co-main" class="flex-grow-1 my-3">
         {% block content %}{% endblock %}
-        {% include 'partial/copyright.html' %}
       </div>
+      {% include 'partial/copyright.html' %}
     </div>
 
 
