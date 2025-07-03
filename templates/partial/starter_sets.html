@@ -1,0 +1,25 @@
+<div class="fh5co-narrow-content">
+    <h2 class="fh5co-heading">{{ _('Millennium Blades Database') }}</h2>
+    <h3 class="alert alert-dark mb-2 text-center">Welcome to the Millennium Blades Database!</h3>
+    <div class="container">
+        <p>
+            The Millenium Blades Database is an unofficial fan wiki about the cards from <a href="https://www.level99store.com/products/millennium-blades">Millennium Blades</a> by <a href="https://www.level99store.com/">Level 99 Games.</a>
+            This wiki includes content from the Base game and various expansions.
+        </p>
+        <p>
+            Soome images and cards might be missing. If you would like to contribute, you can leave a Github Issue <a href="">here.</a>
+        </p>
+        <h3 class="alert alert-dark mb-2 text-center">Starter Sets</h3>
+        <div class="row">
+            {% for base_set in base_sets %}
+            {% set tag_url = base_set | lower | replace(' ', '-') %}
+            <div class="col-6 col-md-4 col-lg-3">
+                <h4 class="text-center"><a href="{{SITEURL}}/tag/{{tag_url}}.html" class="text-reset text-decoration-none">{{base_set}}</a></h4>
+                <a href="{{SITEURL}}/tag/{{tag_url}}.html">
+                    <img class="img-fluid" src="images/base/backs/{{base_set | lower | replace(' ', '_')}}.webp" alt="Missing Card Image" />
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
